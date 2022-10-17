@@ -15,12 +15,12 @@ const { NotImplementedError } = require('../extensions/index.js');
  * => 'STRINGPLUS00PLUS00PLUS**STRINGPLUS00PLUS00PLUS**STRINGPLUS00PLUS00PLUS'
  *
  */
-function repeater(str, option) {
-  let separator = 'separator' in option ? option.separator : '+';
-  let repeatTimes = 'repeatTimes' in option ? option.repeatTimes : 1;
-  let addition = ('addition' in option ? option.addition : '') ?? 'null';
-  let additionSeparator = 'additionSeparator' in option ? option.additionSeparator : '|';
-  let additionRepeatTimes = 'additionRepeatTimes' in option ? option.additionRepeatTimes : 1;
+function repeater(str, options) {
+  let separator = 'separator' in options ? options.separator : '+';
+  let repeatTimes = 'repeatTimes' in options ? options.repeatTimes : 1;
+  let addition = ('addition' in options ? options.addition : '') ?? 'null';
+  let additionSeparator = 'additionSeparator' in options ? options.additionSeparator : '|';
+  let additionRepeatTimes = 'additionRepeatTimes' in options ? options.additionRepeatTimes : 1;
   return Array(repeatTimes).fill(str + Array(additionRepeatTimes).fill(`${addition}`).join(additionSeparator)).join(separator);
 }
 

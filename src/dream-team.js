@@ -20,7 +20,6 @@ function createDreamTeam(members) {
   let arrFiltered = members.filter(item => typeof item === 'string');
   arrFiltered = arrFiltered.map((item) => item.replace(/\s/g, ''));
     return arrFiltered.map((item) => item[0].toUpperCase()).sort().join('');
- 
 }
 
 
